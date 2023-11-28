@@ -15,8 +15,10 @@ public class UnoView implements Observer {
         this.partida = partida;
         this.controller = controller;
         this.scanner = new Scanner(System.in);
-        this.observers = new ArrayList<>();
+        this.observers = new ArrayList<Observer>();
+        this.partida.addObserver(this);
     }
+
 
     public void addObserver(Observer o) {
         observers.add(o);
