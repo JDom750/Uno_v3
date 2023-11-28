@@ -157,10 +157,10 @@ public void update() {
             Carta cartaSeleccionada = partida.obtManoJugador(partida.obtenerJugadorActual()).get(opcion - 1);
             System.out.println("La carta seleccionada es: " + cartaSeleccionada.getColor().toString() + " y el número es: " + cartaSeleccionada.getNumero().toString());
             if (cartaSeleccionada.getColor() != Color.NEGRO) {
-                controller.jugarCarta(opcion - 1);
+                controller.jugarCarta(opcion);
             } else {
                 // El jugador tiene una carta negra, pregunta por el color
-                controller.jugarCarta(opcion - 1);
+                controller.jugarCarta(opcion);
             }
         }
     } catch (InvalidColorSubmissionException | InvalidValueSubmissionException | InvalidPlayerTurnException e) {

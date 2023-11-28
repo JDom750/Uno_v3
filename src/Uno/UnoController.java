@@ -81,16 +81,20 @@ public class UnoController {
 
             boolean jugadaExitosa = false;
             int opcion = vista.elegirOpcion(); // Mover la obtención de opción al interior del bucle
-
+            if (opcion == 0) {
+                tomarCarta(jugadorActual);
+            } else {
             while (!jugadaExitosa) {
                 try {
-                    jugarCarta(opcion - 1);
+                    jugarCarta(opcion);
                     jugadaExitosa = true;  // La jugada fue exitosa, salimos del bucle
-                } catch (InvalidColorSubmissionException | InvalidValueSubmissionException | InvalidPlayerTurnException e) {
+                } catch (InvalidColorSubmissionException | InvalidValueSubmissionException |
+                         InvalidPlayerTurnException | IndexOutOfBoundsException e) {
                     vista.notifyError("Movimiento inválido", e.getMessage());
                     opcion = vista.elegirOpcion();  // Pedir al jugador que elija de nuevo
                 }
             }
+        }
 
             partida.notifyObservers(); //VER SI ESTO SOLUCIONA ALGO
         }
@@ -140,8 +144,8 @@ public void jugarCarta(int posicion) throws InvalidColorSubmissionException, Inv
             Color colorDeclarado = vista.elegirColor();
             partida.tomarCartaJugador(jugadorActual, cartaSeleccionada, colorDeclarado);
         }
-
-        vista.notifyError(partida.obtenerJugadorActual(), cartasEnMano(jugadorActual));
+        //vista.update();
+        //vista.notifyError(partida.obtenerJugadorActual(), cartasEnMano(jugadorActual));
     } catch (InvalidColorSubmissionException | InvalidValueSubmissionException | InvalidPlayerTurnException e) {
         // Lanzamos la excepción aquí si ocurre
         throw e;

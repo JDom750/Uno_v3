@@ -168,6 +168,7 @@ public class Partida implements Observable {
                 jugadorActual = idJugadores.length -1;
             }
         }
+        notifyObservers();
     }
     public void setColorDeCarta(Color c){
         colorValido = c;
@@ -200,11 +201,13 @@ public class Partida implements Observable {
         }else {
             colorValido = carta.getColor();
         }
+
         actualizarTurno();
 
         manejarCartaEspecial(carta);
-
+        notifyObservers();
         pila.add(carta);
+
     }
 
 
@@ -264,7 +267,11 @@ public class Partida implements Observable {
     }
 
     private void manejarCambiarSentido() {
-        System.out.println("La dirección del juego fue invertida por: " + idJugadores[jugadorActual]);
+        if (gameDirection ==false) {
+            System.out.println("La dirección del juego fue invertida por: " + idJugadores[jugadorActual - 1]);
+        }else{
+            System.out.println("La dirección del juego fue invertida por: " + idJugadores[jugadorActual +1]);
+        }
         gameDirection ^= true;
         if (gameDirection == true) {
             jugadorActual = (jugadorActual - 2) % idJugadores.length;
