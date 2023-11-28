@@ -80,8 +80,38 @@ public class Mazo {
         if (estaVacio()) {
             throw new IllegalArgumentException("No se puede robar una carta, ya que no hay cartas en el mazo.");
         }
+
+        if (cartasEnMazo > 0 && cartasEnMazo <= cartas.length) {
+            // Obtener la carta
+            Carta cartaRobada = cartas[cartasEnMazo - 1];
+
+            // Crear un nuevo array sin la carta robada
+            Carta[] nuevoArray = new Carta[cartas.length - 1];
+            System.arraycopy(cartas, 0, nuevoArray, 0, cartasEnMazo - 1);
+            System.arraycopy(cartas, cartasEnMazo, nuevoArray, cartasEnMazo - 1, cartas.length - cartasEnMazo);
+
+            // Asignar el nuevo array a la variable cartas
+            cartas = nuevoArray;
+
+            // Decrementar el índice
+            cartasEnMazo--;
+
+            // Devolver la carta robada
+            return cartaRobada;
+        } else {
+            // Indicar que no hay cartas disponibles (esto podría manejarse de otra manera según tus necesidades)
+            throw new IllegalArgumentException("No hay cartas disponibles en el mazo.");
+        }
+    }
+
+    /*
+    public Carta robarCarta() throws IllegalArgumentException {
+        if (estaVacio()) {
+            throw new IllegalArgumentException("No se puede robar una carta, ya que no hay cartas en el mazo.");
+        }
         return cartas[--cartasEnMazo];
     }
+    */
 
     //----- PARA GUI
     public ImageIcon robarImagenCarta() throws IllegalArgumentException {
@@ -90,7 +120,36 @@ public class Mazo {
         }
         return new ImageIcon(cartas[--cartasEnMazo].toString() + ".png");
     }
+    public Carta[] robarCartas(int n) {
+        if (n < 0) {
+            throw new IllegalArgumentException("Debe robar una cantidad positiva de cartas, pero se intentó robar " + n + " cartas.");
+        }
 
+        if (n > cartasEnMazo) {
+            throw new IllegalArgumentException("No se pueden robar " + n + " cartas, ya que solo hay " + cartasEnMazo + " cartas en el mazo.");
+        }
+
+        Carta[] cartasRobadas = new Carta[n];
+
+        for (int i = 0; i < n; i++) {
+            cartasRobadas[i] = cartas[--cartasEnMazo];
+        }
+
+        // Crear un nuevo array sin las cartas robadas
+        Carta[] nuevoArray = new Carta[cartas.length - n];
+        System.arraycopy(cartas, 0, nuevoArray, 0, cartasEnMazo);
+        System.arraycopy(cartas, cartasEnMazo + n, nuevoArray, cartasEnMazo, cartas.length - (cartasEnMazo + n));
+
+        // Asignar el nuevo array a la variable cartas
+        cartas = nuevoArray;
+
+        // Decrementar el índice
+        cartasEnMazo -= n;
+
+        return cartasRobadas;
+    }
+
+/*
     public Carta[] robarCartas(int n) {
         if (n < 0) {
             throw new IllegalArgumentException("Debe robar una cantidad positiva de cartas, pero se intentó robar " + n + " cartas.");
@@ -107,5 +166,6 @@ public class Mazo {
         }
         return cartasRobadas;
     }
+    */
 }
 

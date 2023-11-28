@@ -64,6 +64,7 @@ public class Partida implements Observable {
                 carta.getNumero() == Numero.MASCUATRO ||
                 carta.getNumero() == Numero.MASDOS) {
             // Tratar eventos especiales (puedes agregar lógica aquí si es necesario)
+            pila.add(carta);
             start(partida);
         } else if (carta.getNumero() == Numero.SALTARSE) {
             // Tratar evento de saltear

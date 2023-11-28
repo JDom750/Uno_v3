@@ -4,16 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f043fa57-a8ef-4bf0-8f04-fedd9afde382" name="Changes" comment="V3.1.1">
+    <list default="true" id="f043fa57-a8ef-4bf0-8f04-fedd9afde382" name="Changes" comment="V3.2.1">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Uno/Modelo/Mazo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Uno/Modelo/Mazo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Uno/Modelo/Partida.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Uno/Modelo/Partida.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Uno/UnoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Uno/UnoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Uno/UnoView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Uno/UnoView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ChangesViewManager" show_ignored="true" />
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -73,7 +74,7 @@
       <option name="presentableId" value="Default" />
       <updated>1701129850081</updated>
       <workItem from="1701129851141" duration="10974000" />
-      <workItem from="1701194252395" duration="3068000" />
+      <workItem from="1701194252395" duration="5477000" />
     </task>
     <task id="LOCAL-00001" summary="V3">
       <option name="closed" value="true" />
@@ -107,7 +108,23 @@
       <option name="project" value="LOCAL" />
       <updated>1701143846481</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="V3.2">
+      <option name="closed" value="true" />
+      <created>1701197358509</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1701197358509</updated>
+    </task>
+    <task id="LOCAL-00006" summary="V3.2.1">
+      <option name="closed" value="true" />
+      <created>1701197423986</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1701197423986</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -118,6 +135,8 @@
     <MESSAGE value="V3" />
     <MESSAGE value="V3.1" />
     <MESSAGE value="V3.1.1" />
-    <option name="LAST_COMMIT_MESSAGE" value="V3.1.1" />
+    <MESSAGE value="V3.2" />
+    <MESSAGE value="V3.2.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="V3.2.1" />
   </component>
 </project>
