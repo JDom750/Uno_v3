@@ -142,9 +142,10 @@ public void update() {
     try {
         System.out.println("Turno de: " + partida.obtenerJugadorActual());
         System.out.println("Cartas en mano:");
-        for (String jugador : partida.obtJugadores()) {
-            System.out.println(jugador + ": " + cartasEnMano(jugador));
-        }
+        //for (String jugador : partida.obtJugadores()) {
+         //   System.out.println(jugador + ": " + cartasEnMano(jugador));
+        //}
+        System.out.println(partida.obtenerJugadorActual() + ": " + cartasEnMano(partida.obtenerJugadorActual()));
         System.out.println("\nÚltima carta jugada:");
         System.out.println(partida.levantarCarta());
         System.out.println("\nElige la posición de la carta que deseas jugar (1, 2, 3, ...) o 0 para robar:");
@@ -176,7 +177,9 @@ public void update() {
     }
     public int elegirOpcion() {
         System.out.println("Elige la posición de la carta que deseas jugar (1, 2, 3, ...) o 0 para robar:");
-        return scanner.nextInt();
+        int s = scanner.nextInt();
+        scanner.nextLine();
+        return s;
     }
     @Override
     public void notifyError(String titulo, String mensaje) {

@@ -19,7 +19,7 @@ public class UnoController {
 
         this.partida.start(partida);
 
-        distribuirCartas();
+        //distribuirCartas(); //no lo creo necesario
         jugar();
     }
 
@@ -45,10 +45,11 @@ public class UnoController {
     }
 
  */
-    private void jugar() {
+    /*
+        private void jugar() {
         while (!partida.TerminoElJuego()) {
             String jugadorActual = partida.obtenerJugadorActual();
-            vista.notifyError(jugadorActual, cartasEnMano(jugadorActual));
+            vista.notifyError(jugadorActual, ": "+cartasEnMano(jugadorActual));
 
             int opcion = vista.elegirOpcion();
             if (opcion == 0) {
@@ -57,7 +58,7 @@ public class UnoController {
                 boolean jugadaExitosa = false;
                 while (!jugadaExitosa) {
                     try {
-                        jugarCarta(opcion);
+                        jugarCarta(opcion-1);
                         jugadaExitosa = true;  // La jugada fue exitosa, salimos del bucle
                     } catch (InvalidColorSubmissionException | InvalidValueSubmissionException | InvalidPlayerTurnException e) {
                         vista.notifyError("Movimiento inválido", e.getMessage());
@@ -65,9 +66,37 @@ public class UnoController {
                     }
                 }
             }
+            partida.notifyObservers();//VER SI ESTO SOLUCIONA ALGO
         }
         scanner.close();
     }
+
+     */
+
+
+    private void jugar() {
+        while (!partida.TerminoElJuego()) {
+            String jugadorActual = partida.obtenerJugadorActual();
+            vista.notifyError(jugadorActual, ": " + cartasEnMano(jugadorActual));
+
+            boolean jugadaExitosa = false;
+            int opcion = vista.elegirOpcion(); // Mover la obtención de opción al interior del bucle
+
+            while (!jugadaExitosa) {
+                try {
+                    jugarCarta(opcion - 1);
+                    jugadaExitosa = true;  // La jugada fue exitosa, salimos del bucle
+                } catch (InvalidColorSubmissionException | InvalidValueSubmissionException | InvalidPlayerTurnException e) {
+                    vista.notifyError("Movimiento inválido", e.getMessage());
+                    opcion = vista.elegirOpcion();  // Pedir al jugador que elija de nuevo
+                }
+            }
+
+            partida.notifyObservers(); //VER SI ESTO SOLUCIONA ALGO
+        }
+        scanner.close();
+    }
+
 
 
 
