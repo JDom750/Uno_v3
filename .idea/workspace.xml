@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f043fa57-a8ef-4bf0-8f04-fedd9afde382" name="Changes" comment="V3.2.1">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Uno/Modelo/Mazo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Uno/Modelo/Mazo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Uno/Modelo/Partida.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Uno/Modelo/Partida.java" afterDir="false" />
-    </list>
+    <list default="true" id="f043fa57-a8ef-4bf0-8f04-fedd9afde382" name="Changes" comment="V3.2.1.0.0" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,7 +22,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Opcion0" />
+        <entry key="$PROJECT_DIR$" value="Opcion1" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -51,7 +47,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Opcion1",
+    "git-widget-placeholder": "Opcion1.1",
     "last_opened_file_path": "E:/Utilidades/Unlu/2C_2023/POO/v3_UNO/UnoV3",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -74,7 +70,7 @@
       <option name="presentableId" value="Default" />
       <updated>1701129850081</updated>
       <workItem from="1701129851141" duration="10974000" />
-      <workItem from="1701194252395" duration="5477000" />
+      <workItem from="1701194252395" duration="5882000" />
     </task>
     <task id="LOCAL-00001" summary="V3">
       <option name="closed" value="true" />
@@ -124,7 +120,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701197423986</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="V3.2.1.0.0">
+      <option name="closed" value="true" />
+      <created>1701200026189</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1701200026189</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -137,6 +141,7 @@
     <MESSAGE value="V3.1.1" />
     <MESSAGE value="V3.2" />
     <MESSAGE value="V3.2.1" />
-    <option name="LAST_COMMIT_MESSAGE" value="V3.2.1" />
+    <MESSAGE value="V3.2.1.0.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="V3.2.1.0.0" />
   </component>
 </project>
