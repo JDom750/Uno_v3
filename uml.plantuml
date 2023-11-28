@@ -1,0 +1,94 @@
+@startuml
+
+!theme plain
+left to right direction
+skinparam linetype ortho
+
+class Carta {
+  + Carta(Color, Numero): 
+  - numero: Numero
+  - color: Color
+  + toString(): String
+   numero: Numero
+   color: Color
+}
+enum Color << enumeration >> {
+  + Color(): 
+  + getColor(int): Color
+  + values(): Color[]
+  + valueOf(String): Color
+}
+class InvalidColorSubmissionException {
+  + InvalidColorSubmissionException(String, Color, Color): 
+}
+class InvalidPlayerTurnException {
+  + InvalidPlayerTurnException(String, String): 
+   pid: String
+}
+class InvalidValueSubmissionException {
+  + InvalidValueSubmissionException(String, Numero, Numero): 
+}
+class Mazo {
+  + Mazo(): 
+  + estaVacio(): boolean
+  + barajar(): void
+  + robarImagenCarta(): ImageIcon
+  + robarCartas(int): Carta[]
+  + reemplazarMazoCon(ArrayList<Carta>): void
+  + reiniciar(): void
+  + robarCarta(): Carta
+}
+enum Numero << enumeration >> {
+  + Numero(): 
+  + getNumero(int): Numero
+  + valueOf(String): Numero
+  + values(): Numero[]
+}
+class Partida {
+  + Partida(String[]): 
+  + cartaValida(Carta): boolean
+  - manejarSaltarse(): void
+  + start(Partida): void
+  + deleteObserver(Observer): void
+  + levantarCarta(): Carta
+  + obtCartaJugador(String, int): Carta
+  + manoVacia(String): boolean
+  + TerminoElJuego(): boolean
+  + jugadorAnterior(int): String
+  + tomarCartaJugador(String, Carta, Color): void
+  - validarCarta(Carta): void
+  + notifyObservers(): void
+  + obtManoJugador(String): ArrayList<Carta>
+  + obtJugadores(): String[]
+  - manejarCartaEspecial(Carta): void
+  + tomarCarta(String): void
+  + esTurno(String): void
+  + tamManoJugador(String): int
+  - actualizarTurno(): void
+  + robarImagenCarta(): ImageIcon
+  + addObserver(Observer): void
+  - manejarMasDos(): void
+  + obtenerJugadorActual(): String
+  - notificarCambio(): void
+  - manejarMasCuatro(): void
+  - manejarCambiarSentido(): void
+   colorDeCarta: Color
+}
+
+Carta                           "1" *-[#595959,plain]-> "color\n1" Color                           
+Carta                           "1" *-[#595959,plain]-> "numero\n1" Numero                          
+InvalidColorSubmissionException "1" *-[#595959,plain]-> "esperado\n1" Color                           
+InvalidValueSubmissionException "1" *-[#595959,plain]-> "esperado\n1" Numero                          
+Mazo                            "1" *-[#595959,plain]-> "cartas\n*" Carta                           
+Mazo                             -[#595959,dashed]->  Carta                           : "«create»"
+Mazo                             -[#595959,dashed]->  Numero                          : "«create»"
+Partida                         "1" *-[#595959,plain]-> "pila\n*" Carta                           
+Partida                          -[#595959,dashed]->  Carta                           : "«create»"
+Partida                         "1" *-[#595959,plain]-> "colorValido\n1" Color                           
+Partida                          -[#595959,dashed]->  InvalidColorSubmissionException : "«create»"
+Partida                          -[#595959,dashed]->  InvalidPlayerTurnException      : "«create»"
+Partida                          -[#595959,dashed]->  InvalidValueSubmissionException : "«create»"
+Partida                          -[#595959,dashed]->  Mazo                            : "«create»"
+Partida                         "1" *-[#595959,plain]-> "mazo\n1" Mazo                            
+Partida                         "1" *-[#595959,plain]-> "numeroValido\n1" Numero                          
+@enduml
